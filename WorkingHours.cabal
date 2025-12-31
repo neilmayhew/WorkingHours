@@ -1,0 +1,34 @@
+cabal-version:      3.0
+build-type:         Simple
+
+name:               WorkingHours
+version:            1.0
+synopsis:           Compute the number of working hours in a given period
+license:            MIT
+license-file:       LICENSE
+author:             Neil Mayhew
+maintainer:         neil@mayhew.name
+copyright:          © 2026 Neil Mayhew
+homepage:           https://github.com/neilmayhew/WorkingHours
+
+common language
+  default-language: Haskell2010
+  ghc-options: -Wall -Wcompat -Wunused-packages
+
+executable WorkingHours
+  import: language
+  main-is: WorkingHours.hs
+  build-depends:
+    base,
+    optparse-applicative,
+    terminal-size,
+    time,
+
+executable WorkingHoursCGI
+  import: language
+  main-is: WorkingHoursCGI.hs
+  build-depends:
+    base,
+    cgi,
+    exceptions,
+    time,
